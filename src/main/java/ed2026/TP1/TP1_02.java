@@ -35,6 +35,7 @@ public class TP1_02 {
                     System.out.println("Saldo: " + cuenta.getSaldo());
                     System.out.println("Tipo de cuenta: " + cuenta.getTipoCuenta());
                     // cuenta.mostrarInformacion();
+                    // System.out.println("\nInformación: " + cuenta.toString() + "\n");
                     break;
                 case 2:
                     // Depositar dinero

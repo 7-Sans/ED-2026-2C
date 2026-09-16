@@ -1,4 +1,4 @@
-package ed2026.TP1;
+package ed2026.TP2;
 // CUIDADO: Cambiar el nombre del paquete 'ed2026.TP1' según su estructura de carpetas o paquetes
 
 // Importar clases necesarias.
@@ -129,4 +129,47 @@ public class Helper {
         return nextDouble(Helper.scanner, inputMessage, "Ingrese un número válido");
     }
 
+    /**
+     * Imprime un arreglo de una dimensión.
+     * 
+     * @param textBefore mensaje que se muestra antes del arreglo
+     * @param array      el arreglo a imprimir
+     * @param textAfter  mensaje que se muestra después del arreglo
+     */
+    static void printOneDimensionArray(String textBefore, Object[] array, String textAfter) {
+        System.out.print(textBefore);
+        System.out.print("[" + array[0]);
+        for (int i = 1; i < array.length; ++i) {
+            System.out.print("," + array[i]);
+        }
+        System.out.print("]");
+        System.out.print(textAfter);
+    }
+
+    /**
+     * Imprime un arreglo de dos dimensiones.
+     * 
+     * @param textBefore mensaje que se muestra antes del arreglo
+     * @param array      el arreglo a imprimir
+     * @param textAfter  mensaje que se muestra después del arreglo
+     */
+    static void printTwoDimensionArray(String textBefore, Object[][] array, String textAfter) {
+        System.out.print(textBefore);
+
+        System.out.print("[[" + array[0][0]);
+        for (int j = 1; j < array[0].length; ++j) {
+            System.out.print("," + array[0][j]);
+        }
+        System.out.print("]");
+
+        for (int i = 1; i < array.length; ++i) {
+            System.out.print(",[" + array[i][0]);
+            for (int j = 1; j < array[i].length; ++j) {
+                System.out.print("," + array[i][j]);
+            }
+            System.out.print("]");
+        }
+        System.out.print("]");
+        System.out.print(textAfter);
+    }
 }

@@ -11,10 +11,12 @@ import java.util.Scanner;
  * 
  *          En el programa principal (main) se debe:
  *          Crear una única instancia de la clase Cilindro.
- *          Solicitar al usuario que ingrese el radio y la altura verificando que los valores sean estrictamente
+ *          Solicitar al usuario que ingrese el radio y la altura verificando que los valores sean
+ *          estrictamente
  *          positivos (mayores a cero).
  *          Utilizar los métodos de la clase Cilindro para establecer estas dimensiones.
- *          Calcular y mostrar el volumen y el área de la superficie del cilindro creado, formateando los decimales a
+ *          Calcular y mostrar el volumen y el área de la superficie del cilindro creado,
+ *          formateando los decimales a
  *          dos cifras.
  *
  */
@@ -41,9 +43,9 @@ public class TP1_01 {
             }
         }
 
-        System.out.print("Ingrese la altura del cilindro (mayor a cero): ");
         // Validar que la altura sea mayor a cero
         while (altura <= 0) {
+            System.out.print("Ingrese la altura del cilindro (mayor a cero): ");
             altura = scanner.nextDouble();
             if (altura <= 0) {
                 System.out.print("Error: La altura debe ser mayor a cero. Ingrese nuevamente: ");
@@ -54,6 +56,18 @@ public class TP1_01 {
         cilindro.setRadio(radio);
         cilindro.setAltura(altura);
 
+        // Calcular y mostrar el volumen y el área de la superficie del cilindro
+        System.out.printf("Volumen del cilindro: %.2f%n", cilindro.getVolumen());
+        System.out.printf("Área de la superficie del cilindro: %.2f%n", cilindro.getAreaSuperficie());
+
+        System.out.println("\nValor del Radio: " + cilindro.getRadio());
+        try {
+            // Intentar establecer un radio negativo para probar la validación
+            cilindro.setRadio(-3);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        System.out.println("\nValor del Radio después de la prueba: " + cilindro.getRadio());
         // Calcular y mostrar el volumen y el área de la superficie del cilindro
         System.out.printf("Volumen del cilindro: %.2f%n", cilindro.getVolumen());
         System.out.printf("Área de la superficie del cilindro: %.2f%n", cilindro.getAreaSuperficie());
