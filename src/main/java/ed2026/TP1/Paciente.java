@@ -9,7 +9,16 @@ public class Paciente {
 
     // Constructors
     public Paciente(){
-
+        _nombre = "John";
+        _dni = "76435234";
+        _peso = 72; // kg
+        _altura = 172; // cm
+    }
+    public Paciente(String nombre, String dni, double peso){
+        _nombre = nombre;
+        _dni = dni;
+        _peso = peso;
+        _altura = 170;
     }
     public Paciente(String nombre, String dni, double peso, double altura){
         _nombre = nombre;
@@ -24,8 +33,7 @@ public class Paciente {
     public String getDni(){return _dni;}
 
     public void setDni(String dni){
-        String dniLimpio = dni.replace(".", "").trim();
-        _dni = dniLimpio;
+        _dni = dni.replace(".", "").trim();
     }
 
     public double getPeso(){return _peso;}
